@@ -45,7 +45,7 @@ contract KilliFishCertificate is ERC721Enumerable, Ownable {
     }
   }
 
-  function walletOfOwner(address _owner) // 白名單
+  function walletOfOwner(address _owner)
     public
     view
     returns (uint256[] memory)
