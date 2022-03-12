@@ -35,7 +35,7 @@ contract KilliFishCertificate is ERC721Enumerable, Ownable {
     require(!paused);
     require(_mintAmount > 0); // 每次必須鑄造超過 0 個
     require(_mintAmount <= maxMintAmount); // 鑄造的數量部可以大於每次最大鑄造數量
-    require(supply + _mintAmount <= maxSupply); // 鑄造的數量和當前發行量加起來，不可以超過最大總發行量
+    require(totalSupply() + _mintAmount <= maxSupply); // 鑄造的數量和當前發行量加起來，不可以超過最大總發行量
 
     for (uint256 i = 0; i < _mintAmount; i++) { // tokenID 從 0 開始
         while(_exists(supply + i)){ // 如果現在這個 tokenID 已經存在就鑄造下一個，這個情況只會發生在 creater 自訂
